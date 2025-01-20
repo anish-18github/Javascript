@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assingment</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+
+</body>
+
+<script>
+    const arr1 = ['ashish', 'bhanu', 'naveen', 'gautam']
+    const arr2 = ['blue', 'green', 'yellow', 'red', 'purple', 'grey', 'white', 'orange']
+
+    function getRandomColor(colors) {
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+    
+    arr1.forEach((text) => {
+    const randomColor = getRandomColor(arr2);
+    multipleButtons(text, randomColor);
+});
+
+
+    function multipleButtons(text, bgColor) {
+        const button = document.createElement('button')
+        console.log(button)
+        button.setAttribute('className', 'firstbutton')
+        button.setAttribute('type', 'submit')
+        button.style.backgroundColor = `${bgColor}`
+        button.style.cursor = 'pointer'
+        button.style.padding = "12px"
+        button.style.borderRadius = "10px"
+        const textnode = document.createTextNode(`${text}`)
+        button.appendChild(textnode)
+        document.body.appendChild(button)
+    } 
+</script>
+
+</html>
